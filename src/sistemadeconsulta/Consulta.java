@@ -7,9 +7,8 @@ package sistemadeconsulta;
 
 /**
  *
- * @author EliasMancera
+ * @author Aux Sistemas
  */
-public interface Lista {
-    public int tamanio();
-    public void obtener();
+public class Consulta {
+    
 }

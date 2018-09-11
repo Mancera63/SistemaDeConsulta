@@ -10,5 +10,6 @@ package sistemadeconsulta;
  * @author EliasMancera
  */
 public class Enfermedad {
-    
+    String nombre;
+    String[] sintomas;
 }
