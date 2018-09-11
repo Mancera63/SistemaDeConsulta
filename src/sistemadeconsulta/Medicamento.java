@@ -14,6 +14,8 @@ public class Medicamento {
     private Lista<String> enfermedades_limitantes;
     private short edad_minima_recomendada;
 
+    public Medicamento() {}
+
     public Medicamento(String nombre, Lista<String> enfermedades_limitantes, short edad_minima_recomendada) {
         this.nombre = nombre;
         this.enfermedades_limitantes = enfermedades_limitantes;
