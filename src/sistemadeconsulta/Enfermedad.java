@@ -7,7 +7,7 @@ package sistemadeconsulta;
 
 /**
  *
- * @author EliasMancera
+ * @author Equipo Verde
  */
 public class Enfermedad {
     private String nombre;

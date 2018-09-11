@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author EliasMancera
+ * @author Equipo verde
  */
 public class Lista<E> {
     private Nodo<E> nodoInicial;
