@@ -10,5 +10,35 @@ package sistemadeconsulta;
  * @author EliasMancera
  */
 public class Enfermedad {
-    
+    private String nombre;
+    private Lista<String> sintomas;
+    private Lista<Medicamento> medicamentos;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Lista<String> getSintomas() {
+        return sintomas;
+    }
+
+    public void setSintomas(Lista<String> sintomas) {
+        this.sintomas = sintomas;
+    }
+
+    public Lista<Medicamento> getMedicamentos() {
+        return medicamentos;
+    }
+
+    public void setMedicamentos(Lista<Medicamento> medicamentos) {
+        this.medicamentos = medicamentos;
+    }
+
+    public void agregarMedicamento(Medicamento medicamento) {
+        this.medicamentos.agregar(medicamento);
+    }
 }
