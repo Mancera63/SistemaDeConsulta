@@ -1,6 +1,8 @@
 package sistemadeconsulta;
-
-import java.util.List;
+/**
+ *
+ * @author Equipo verde
+ */
 
 public class Nodo<E> {
     private E objeto;
@@ -24,6 +26,5 @@ public class Nodo<E> {
 
     public void setNodoSiguiente(Nodo<E> nodoSiguiente) {
         this.nodoSiguiente = nodoSiguiente;
-        List<String> e;
     }
 }

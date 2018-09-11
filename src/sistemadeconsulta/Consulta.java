@@ -7,7 +7,7 @@ package sistemadeconsulta;
 
 /**
  *
- * @author Aux Sistemas
+ * @author Equipo verde
  */
 public class Consulta {
     

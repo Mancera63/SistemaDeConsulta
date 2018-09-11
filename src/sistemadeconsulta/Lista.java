@@ -5,8 +5,6 @@
  */
 package sistemadeconsulta;
 
-import java.util.List;
-
 /**
  *
  * @author Equipo verde
