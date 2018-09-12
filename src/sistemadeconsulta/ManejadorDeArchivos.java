@@ -33,8 +33,8 @@ public class ManejadorDeArchivos {
         return new String(cadena);
     }
     
-    public int leerShort(short longitud) {
-        short corto = 0;
+    public short leerShort(int longitud) {
+        short corto=0;
         try {
             for (int i = 0; i < longitud; i++) {
                 corto = archivo.readShort();

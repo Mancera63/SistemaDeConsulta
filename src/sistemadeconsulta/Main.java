@@ -28,10 +28,11 @@ public class Main {
             try {
                 switch (Integer.parseInt(global.nextLine())) {
                     case 1: //Se realiza una consulta
-                        lSintomas.agregar("sTOS");
+                        lSintomas.agregar("sFAT");
+                        lSintomas.agregar("sDOL");
                         con.buscaSintomas(lSintomas);
-                        enfermedadesLimitantes.agregar("DIA");
-                        //con.buscaMedicamentos(enfermedadesLimitantes, 10);
+                        enfermedadesLimitantes.agregar("DIAS");
+                        con.buscaMedicamentos(enfermedadesLimitantes, 70);
                         break;
                     case 2: //Insertar enferemedad
                         String enferemedad;
