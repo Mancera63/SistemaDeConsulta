@@ -37,10 +37,12 @@ public class Main {
                         for(i=0; i<5; i++) {
                             System.out.printf("Inserta sintoma"+(i+1)+": ");
                             sintomas[i] = actual.next();
-                            System.out.println("Insertar otro sintoma? (S/N)");
-                            if(actual.next().equals("N")) {
-                                i++;
-                                break;
+                            if(i<4) {
+                                System.out.println("Insertar otro sintoma? (S/N)");
+                                if (actual.next().equals("N")) {
+                                    i++;
+                                    break;
+                                }
                             }
                         }
                         while (i<5) {
@@ -50,10 +52,12 @@ public class Main {
                         for(i=0; i<3; i++) {
                             System.out.printf("Inserta medicamento"+(i+1)+": ");
                             medicamentos[i] = actual.next();
-                            System.out.println("Insertar otro medicamento? (S/N)");
-                            if(actual.next().equals("N")) {
-                                i++;
-                                break;
+                            if(i<2) {
+                                System.out.println("Insertar otro medicamento? (S/N)");
+                                if (actual.next().equals("N")) {
+                                    i++;
+                                    break;
+                                }
                             }
                         }
                         while (i<3) {
@@ -111,6 +115,5 @@ public class Main {
                 System.out.println("\nERROR: Solo se pueden insertar numeros");
             }
         }
-
     }
 }

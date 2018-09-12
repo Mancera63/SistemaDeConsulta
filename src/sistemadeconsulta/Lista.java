@@ -30,10 +30,10 @@ public class Lista<E> {
         Nodo<E> puntero = nodoInicial;
         if(nodoInicial != null) {
             tamanio++;
-        }
-        while(puntero.getNodoSiguiente() != null) {
-            tamanio++;
-            puntero = puntero.getNodoSiguiente();
+            while(puntero.getNodoSiguiente() != null) {
+                tamanio++;
+                puntero = puntero.getNodoSiguiente();
+            }
         }
         return tamanio;
     }
@@ -41,15 +41,17 @@ public class Lista<E> {
     public E obtener(int indice) {
         Nodo<E> puntero = nodoInicial;
         int indiceActual = 0;
-        if(indice==0)
-            return nodoInicial.getObjeto();
-        indiceActual++;
-        while(puntero.getNodoSiguiente()!=null) {
-            if(indiceActual == indice)
-                return puntero.getObjeto();
-            else
-                puntero = puntero.getNodoSiguiente();
+        if(nodoInicial!=null) {
+            if (indice == 0)
+                return nodoInicial.getObjeto();
             indiceActual++;
+            while (puntero.getNodoSiguiente() != null) {
+                if (indiceActual == indice)
+                    return puntero.getObjeto();
+                else
+                    puntero = puntero.getNodoSiguiente();
+                indiceActual++;
+            }
         }
         return null;
     }
