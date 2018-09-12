@@ -11,27 +11,37 @@ package sistemadeconsulta;
  */
 
 import java.io.*;
-import java.util.Scanner;
 
 public class ManejadorDeArchivos {
-    int i;
-    
-    void escribir() throws IOException{
-        String[] datos = new String[5];
-        Scanner entrada = new Scanner(System.in);
-        
-        DataOutputStream archi = new DataOutputStream(new FileOutputStream("archivo"));
-        
-        System.out.println("Escribe 5 datos");
-        for (int j = 0; j < 5; j++) {
-            archi.writeUTF(entrada.next());
-        }
+    private RandomAccessFile archivo;
+
+    public ManejadorDeArchivos(String nombre_archivo) throws IOException{
+        this.archivo = new RandomAccessFile(nombre_archivo, "rw");
+    }
+
+    public RandomAccessFile getArchivo() {
+        return archivo;
+    }
+
+    public String leerCadena(int longitud) {
+        char [] cadena = new char[longitud];
+        try {
+            for (int i = 0; i < cadena.length; i++) {
+                cadena[i] = archivo.readChar();
+            }
+        } catch (IOException e ) { e.printStackTrace(); }
+        return new String(cadena);
+    }
+
+    void escribir(String dato) throws IOException {
+        DataOutputStream archi = new DataOutputStream(new FileOutputStream("escritor"));
         archi.close();
     }
+
     
-    void leerEnfermedades() throws IOException{
+    void leerEnfermedades() throws IOException {
         long ap_actual, ap_final;
-        RandomAccessFile arch = new RandomAccessFile("archivo", "r");
+        RandomAccessFile arch = new RandomAccessFile("escritor", "r");
         
         System.out.println("Muestra Archivo");
         while ((ap_actual = arch.getFilePointer()) != (ap_final = arch.length())) {
