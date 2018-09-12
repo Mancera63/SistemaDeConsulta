@@ -46,7 +46,7 @@ public class Lista<E> {
             indiceActual++;
             while (puntero.getNodoSiguiente() != null) {
                 if (indiceActual == indice)
-                    return puntero.getObjeto();
+                    return puntero.getNodoSiguiente().getObjeto();
                 else
                     puntero = puntero.getNodoSiguiente();
                 indiceActual++;
