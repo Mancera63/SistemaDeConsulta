@@ -28,11 +28,35 @@ public class Main {
             try {
                 switch (Integer.parseInt(global.nextLine())) {
                     case 1: //Se realiza una consulta
-                        lSintomas.agregar("sFAT");
-                        lSintomas.agregar("sDOL");
+                        System.out.println("Nueva consulta");
+                        String decision = "S";
+                        short edad_paciente;
+                        while (decision.equals("S")) {
+                            System.out.printf("Ingrese la clave del sintoma: ");
+                            lSintomas.agregar(actual.next());
+                            System.out.printf("Insertar otro sintoma? (S/N) ");
+                            decision = actual.next();
+                        }
+                        System.out.println("El paciente tiene alguna de las siguientes enfermedades? (S/N)");
+                        System.out.println(
+                                "Enfermedad1 - lEN1\n" +
+                                "Enfermedad2 - lEN2\n" +
+                                "Enfermedad3 - lEN3\n" +
+                                "Enfermedad4 - lEN4\n" +
+                                "Enfermedad5 - lEN5\n");
+                        decision = actual.next();
+                        if(decision.equals("S")) {
+                            while (decision.equals("S")) {
+                                System.out.printf("Ingrese clave: ");
+                                enfermedadesLimitantes.agregar(actual.next());
+                                System.out.println("Tiene otra enfermedad? (S/N)");
+                                decision = actual.next();
+                            }
+                        }
+                        System.out.printf("Ingrese la edad del paciente: ");
+                        edad_paciente = actual.nextShort();
                         con.buscaSintomas(lSintomas);
-                        enfermedadesLimitantes.agregar("DIAS");
-                        con.buscaMedicamentos(enfermedadesLimitantes, 70);
+                        con.buscaMedicamentos(enfermedadesLimitantes, edad_paciente);
                         break;
                     case 2: //Insertar enferemedad
                         String enferemedad;

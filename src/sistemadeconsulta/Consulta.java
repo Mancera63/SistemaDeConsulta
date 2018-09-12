@@ -15,10 +15,11 @@ public class Consulta {
 
     ManejadorDeArchivos ma;
     Lista<Enfermedad> enfermedades = new Lista<>();
-    Lista<String> sintomasEnf = new Lista<>(), medicamentos = new Lista<>(), medicamentos2 = new Lista<>();
+
     Enfermedad en;
 
     void buscaSintomas(Lista<String> sintomas) throws IOException {
+        Lista<String> sintomasEnf = new Lista<>(), medicamentos = new Lista<>();
         ma = new ManejadorDeArchivos("enfermedades");
         String enfermedad, sintoma, medicamento;
         boolean agregar = false;
@@ -65,7 +66,7 @@ public class Consulta {
 
         while (ap_actual < ap_final) {
             medicamento = ma.leerCadena(4);
-            edad_recomedada = ma.leerShort(1);
+            edad_recomedada = ma.getArchivo().readShort();
             enfermedad_limitante1 = ma.leerCadena(4);
             enfermedad_limitante2 = ma.leerCadena(4);
             enfermedad_limitante3 = ma.leerCadena(4);
