@@ -12,7 +12,15 @@ package sistemadeconsulta;
 public class Enfermedad {
     private String nombre;
     private Lista<String> sintomas;
-    private Lista<Medicamento> medicamentos;
+    private Lista<String> medicamentos;
+
+    public Enfermedad(String nombre, Lista<String> sintomas, Lista<String> medicamentos) {
+        this.nombre = nombre;
+        this.sintomas = sintomas;
+        this.medicamentos = medicamentos;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -30,15 +38,15 @@ public class Enfermedad {
         this.sintomas = sintomas;
     }
 
-    public Lista<Medicamento> getMedicamentos() {
+    public Lista<String> getMedicamentos() {
         return medicamentos;
     }
 
-    public void setMedicamentos(Lista<Medicamento> medicamentos) {
+    public void setMedicamentos(Lista<String> medicamentos) {
         this.medicamentos = medicamentos;
     }
 
-    public void agregarMedicamento(Medicamento medicamento) {
+    public void agregarMedicamento(String medicamento) {
         this.medicamentos.agregar(medicamento);
     }
 }

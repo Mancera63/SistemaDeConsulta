@@ -12,7 +12,6 @@ package sistemadeconsulta;
 public class Lista<E> {
     private Nodo<E> nodoInicial;
 
-
     public void agregar(E elemento) {
         if(nodoInicial == null) {
             nodoInicial = new Nodo<>(elemento);

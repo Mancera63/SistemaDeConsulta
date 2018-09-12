@@ -11,9 +11,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         ManejadorDeArchivos archivo;
+        Consulta con = new Consulta();
         Scanner global = new Scanner(System.in);
         Scanner actual = new Scanner(System.in);
         int opcion = 0;
+        Lista<String> lSintomas = new Lista<>();
+        Lista<String> enfermedadesLimitantes = new Lista<>();
         System.out.println("<<< Sistema de consulta >>>");
         while(opcion!=4) {
             System.out.println(
@@ -25,6 +28,10 @@ public class Main {
             try {
                 switch (Integer.parseInt(global.nextLine())) {
                     case 1: //Se realiza una consulta
+                        lSintomas.agregar("sTOS");
+                        con.buscaSintomas(lSintomas);
+                        enfermedadesLimitantes.agregar("DIA");
+                        //con.buscaMedicamentos(enfermedadesLimitantes, 10);
                         break;
                     case 2: //Insertar enferemedad
                         String enferemedad;

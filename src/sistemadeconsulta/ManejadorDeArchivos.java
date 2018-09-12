@@ -32,6 +32,16 @@ public class ManejadorDeArchivos {
         } catch (IOException e ) { e.printStackTrace(); }
         return new String(cadena);
     }
+    
+    public int leerShort(short longitud) {
+        short corto = 0;
+        try {
+            for (int i = 0; i < longitud; i++) {
+                corto = archivo.readShort();
+            }
+        } catch (IOException e ) { e.printStackTrace(); }
+        return corto;
+    }
 
     void escribir(String dato) throws IOException {
         DataOutputStream archi = new DataOutputStream(new FileOutputStream("escritor"));
@@ -41,12 +51,11 @@ public class ManejadorDeArchivos {
     
     void leerEnfermedades() throws IOException {
         long ap_actual, ap_final;
-        RandomAccessFile arch = new RandomAccessFile("escritor", "r");
         
         System.out.println("Muestra Archivo");
-        while ((ap_actual = arch.getFilePointer()) != (ap_final = arch.length())) {
-            System.out.println(arch.readUTF());
+        while ((ap_actual = archivo.getFilePointer()) != (ap_final = archivo.length())) {
+            System.out.println(archivo.readUTF());
         }
-        arch.close();
+        archivo.close();
     }
 }
