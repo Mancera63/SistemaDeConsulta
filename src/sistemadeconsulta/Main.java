@@ -1,11 +1,20 @@
 package sistemadeconsulta;
+
+import java.io.IOException;
+
 /**
  *
  * @author Equipo verde
  */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        
+        ManejadorDeArchivos ma = new ManejadorDeArchivos();
+        ma.escribir();
+        ma.leerEnfermedades();
+        System.exit(0);
+        
         Enfermedad e = new Enfermedad();
         Lista<String> sintomas = new Lista<>();
         Lista<String> enfermedades_limitantes = new Lista<>();
